@@ -73,6 +73,8 @@ typedef union {
   };
 } userspace_config_t;
 
+extern userspace_config_t userspace_config;
+
 #if defined(KEYMAP_SAFE_RANGE)
   #define PLACEHOLDER_SAFE_RANGE KEYMAP_SAFE_RANGE
 #else
@@ -80,8 +82,7 @@ typedef union {
 #endif
 
 enum userspace_custom_keycodes {
-  EPRM = PLACEHOLDER_SAFE_RANGE, // Resets EEPROM do defaults (as in eeconfig_init)
-  VRSN,              // Prints QMK Firmware and board info
+  VRSN = PLACEHOLDER_SAFE_RANGE,              // Prints QMK Firmware and board info
   KC_QWERTY,         // Sets default layer to QWERTY
   KC_COLEMAK,        // Sets default layer to COLEMAK
   KC_DVORAK,         // Sets default layer to DVORAK
@@ -159,6 +160,9 @@ enum userspace_custom_keycodes {
 #define OS_RCTL OSM(MOD_RCTL)
 #define OS_LALT OSM(MOD_LALT)
 #define OS_RALT OSM(MOD_RALT)
+#define OS_MEH  OSM(MOD_MEH)
+#define OS_HYPR OSM(MOD_HYPR)
+
 #define ALT_APP ALT_T(KC_APP)
 
 #define MG_NKRO MAGIC_TOGGLE_NKRO
@@ -254,6 +258,14 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _________________DVORAK_R2_________________        KC_D,    KC_H,    KC_T,    KC_N,    KC_S
 #define _________________DVORAK_R3_________________        KC_B,    KC_M,    KC_W,    KC_V,    KC_Z
 
+
+#define ________________DVORAK_AU_L1_______________        KC_QUOT, KC_COMM, KC_DOT, KC_P,     KC_Y
+#define ________________DVORAK_AU_L2_______________        KC_O,    KC_A,    KC_E,   KC_I,     KC_U
+#define ________________DVORAK_AU_L3_______________        KC_SCLN, KC_Q,    KC_J,   KC_K,     KC_X
+
+#define ________________DVORAK_AU_R1_______________        KC_F,    KC_G,    KC_C,    KC_R,    KC_L
+#define ________________DVORAK_AU_R2_______________        KC_D,    KC_H,    KC_T,    KC_N,    KC_S
+#define ________________DVORAK_AU_R3_______________        KC_B,    KC_M,    KC_W,    KC_V,    KC_Z
 
 #define _________________WORKMAN_L1________________       KC_Q,    KC_D,    KC_R,   KC_W,     KC_B
 #define _________________WORKMAN_L2________________       KC_A,    KC_S,    KC_H,   KC_T,     KC_G
@@ -353,4 +365,3 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _________________ADJUST_R1_________________        KC_SEC1, KC_SEC2, KC_SEC3, KC_SEC4, KC_SEC5
 #define _________________ADJUST_R2_________________        AG_SWAP, QWERTY,  COLEMAK, DVORAK,  WORKMAN
 #define _________________ADJUST_R3_________________        MG_NKRO, KC_MUTE, KC_VOLD, KC_VOLU, KC_MNXT
-
