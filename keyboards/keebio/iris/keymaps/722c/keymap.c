@@ -95,9 +95,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|----+----+----+----+----+----|              |----+----+----+----+----+----|
      LSFT, A  , S  , D  , F  , G  ,                NO , NO , NO , NO , NO , NO ,
   //|----+----+----+----+----+----+----.    ,----|----+----+----+----+----+----|
-     LCTL, Z  , X  , C  , V  , B  ,ENT ,     NO  , NO , NO , NO , NO , NO ,GAME,
+     LCTL, Z  , X  , C  , V  , B  ,CAPS,     NO  , NO , NO , NO , NO , NO ,GAME,
   //`----+----+----+--+-+----+----+----/    \----+----+----+----+----+----+----'
-                       CAPS,LALT,SPC ,         NO  , NO  ,NO
+                       LALT,SPC ,ENT ,         NO  , NO  ,NO
   //                  `----+----+----'        `----+----+----'
   ),
 
